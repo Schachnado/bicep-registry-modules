@@ -1,0 +1,6 @@
+name: sbxApp
+version: 1.0.0
+summary: Azure sbx
+description: sbx test
+runner: Bicep
+templatePath: main.bicep
