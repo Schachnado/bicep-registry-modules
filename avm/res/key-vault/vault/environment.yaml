@@ -1,6 +1,13 @@
-name: sbxApp
+name: sbxAppkv
 version: 1.0.0
-summary: Azure sbx
+summary: Azure sbx kv
 description: sbx test
 runner: Bicep
 templatePath: main.bicep
+parameters:
+- id: "name"
+  name: "name"
+  description: "Name of the kv App "
+  default: ""
+  type: "string"
+  required: true
