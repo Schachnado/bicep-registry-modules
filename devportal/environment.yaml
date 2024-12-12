@@ -5,25 +5,13 @@ description: sbx environment
 runner: Bicep
 templatePath: main.bicep
 parameters:
-- id: "keyVaultName"
-  name: "keyVaultName"
-  description: "Name of the key vault"
-  default: ""
-  type: "string"
-  required: true
+
 
 - id: "storageAccountName"
   name: "storageAccountName"
   description: "Name of the storage account"
   default: ""
   type: "string"
-  required: true
-
-- id: "vnetName"
-  name: vnetVnetName
-  description: Name of the vnet
-  default: ""
-  type: string
   required: true
 
 - id: "enableHierarchicalNamespace"
@@ -36,9 +24,12 @@ parameters:
     - "false"
   required: false
 
-- id: "managedIdentityName"
-  name: "managedIdentityName"
-  description: "Name of the managed identity"
-  default: ""
+- id: "createMode"
+  name: "createMode"
+  description: "Create Mode"
+  default: "default"
   type: "string"
-  required: true
+  allowed:
+    - "default"
+    - "recover"
+  required: false

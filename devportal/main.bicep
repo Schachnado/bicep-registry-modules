@@ -1,13 +1,23 @@
-@description('Required. The name of the key vault.')
-param keyvaultName string
+//var
+@description('The name of the virtual network.')
+var vnetName = 'bestvnetname22'
 
+@description('The name of the managed identity.')
+var managedIdentityName = 'bestminame22'
+
+@description('The name of the key vault.')
+var keyVaultName = 'bestkvname22'
+
+//param
 @description('Required. The name of the storage account.')
 param storageAccountName string
 
-@description('Required. The name of the virtual network.')
-param vnetName string
-
-param managedIdentityName string
+@allowed([
+  'default'
+  'recover'
+])
+@description('Optional. The mode to create the storage account. Default is default.')
+param createMode string = 'default'
 
 @allowed([
   true
@@ -16,14 +26,16 @@ param managedIdentityName string
 @description('Optional. Enable Hierarchical Namespace for the storage account. Default is true.')
 param enableHierarchicalNamespace bool = true
 
-module keyvault '../avm/res/key-vault/vault/main.bicep' = {
+//modules
+module keyvault 'br/public:avm/res/key-vault/vault:0.11.0' = {
   name: 'keyvault'
   params: {
-    name: keyvaultName
+    name: keyVaultName
+    createMode: createMode
   }
 }
 
-module storage '../avm/res/storage/storage-account/main.bicep' = {
+module storage 'br/public:avm/res/storage/storage-account:0.14.0' = {
   name: 'storage'
   params: {
     name: storageAccountName
@@ -31,7 +43,7 @@ module storage '../avm/res/storage/storage-account/main.bicep' = {
   }
 }
 
-module vnet '../avm/res/network/virtual-network/main.bicep' = {
+module vnet 'br/public:avm/res/network/virtual-network:0.5.0' = {
   name: 'vnet'
   params: {
     name: vnetName
@@ -41,7 +53,7 @@ module vnet '../avm/res/network/virtual-network/main.bicep' = {
   }
 }
 
-module managedIdentity '../avm/res/managed-identity/user-assigned-identity/main.bicep' = {
+module managedIdentity 'br/public:avm/res/managed-identity/user-assigned-identity:0.4.0' = {
   name: 'managedIdentity'
   params: {
     name: managedIdentityName
