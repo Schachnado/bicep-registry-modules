@@ -11,24 +11,31 @@ parameters:
   default: ""
   type: "string"
   required: true
+
 - id: "storageAccountName"
   name: "storageAccountName"
   description: "Name of the storage account"
   default: ""
   type: "string"
   required: true
+
 - id: "vnetName"
   name: vnetVnetName
   description: Name of the vnet
   default: ""
   type: string
   required: true
+
 - id: "enableHierarchicalNamespace"
   name: "enableHierarchicalNamespace"
   description: "Enable Hierarchical Namespace"
   default: "true"
-  type: "bool"
+  type: "boolean"
+  allowed:
+    - "true"
+    - "false"
   required: false
+
 - id: "managedIdentityName"
   name: "managedIdentityName"
   description: "Name of the managed identity"
