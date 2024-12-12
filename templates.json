@@ -5,7 +5,7 @@
       "preview": "./templates/images/test.png",
       "website": "https://github.com/Azure/azure-dev",
       "author": "Azure Dev",
-      "source": "https://github.com/Schachnado/bicep-registry-modules/templates.json",
+      "source": "https://github.com/Schachnado/bicep-registry-modules/tree/main/azd",
       "tags": [
         "bicep",
         "msft"
