@@ -1,14 +1,14 @@
 [
-    {
-      "title": "Local test template",
-      "description": "A Custom starter template that uses avm keyvault for testing purposes only",
-      "preview": "./templates/images/test.png",
-      "website": "https://github.com/Azure/azure-dev",
-      "author": "Azure Dev",
-      "source": "https://github.com/Schachnado/azd-starter-bicep",
-      "tags": [
-        "bicep",
-        "msft"
-      ]
-    }
+  {
+    "title": "Local test template",
+    "description": "A Custom starter template that uses avm keyvault for testing purposes only",
+    "preview": "./templates/images/test.png",
+    "website": "https://github.com/Azure/azure-dev",
+    "author": "Azure Dev",
+    "source": "https://github.com/Schachnado/azd-starter-bicep",
+    "tags": [
+      "bicep",
+      "msft"
+    ]
+  }
 ]
