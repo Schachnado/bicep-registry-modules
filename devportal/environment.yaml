@@ -1,0 +1,37 @@
+name: sandboxZoo
+version: 1.0.0
+summary: A sandbox zoo environment with some different animals
+description: sbx environment
+runner: Bicep
+templatePath: main.bicep
+parameters:
+- id: "keyVaultName"
+  name: "keyVaultName"
+  description: "Name of the key vault"
+  default: ""
+  type: "string"
+  required: true
+- id: "storageAccountName"
+  name: "storageAccountName"
+  description: "Name of the storage account"
+  default: ""
+  type: "string"
+  required: true
+- id: "vnetName"
+  name: vnetVnetName
+  description: Name of the vnet
+  default: ""
+  type: string
+  required: true
+- id: "enableHierarchicalNamespace"
+  name: "enableHierarchicalNamespace"
+  description: "Enable Hierarchical Namespace"
+  default: "true"
+  type: "bool"
+  required: false
+- id: "managedIdentityName"
+  name: "managedIdentityName"
+  description: "Name of the managed identity"
+  default: ""
+  type: "string"
+  required: true
